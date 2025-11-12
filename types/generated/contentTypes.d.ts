@@ -473,6 +473,55 @@ export interface ApiGlobalLayoutGlobalLayout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    displayName: 'Home Page';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    carousel: Schema.Attribute.DynamicZone<['blocks.logo-link']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -551,7 +600,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
 export interface ApiProductsPageProductsPage extends Struct.SingleTypeSchema {
   collectionName: 'products_pages';
   info: {
-    displayName: 'HomePage';
+    displayName: 'Producs Page';
     pluralName: 'products-pages';
     singularName: 'products-page';
   };
@@ -1108,6 +1157,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::global-layout.global-layout': ApiGlobalLayoutGlobalLayout;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::product.product': ApiProductProduct;
       'api::products-page.products-page': ApiProductsPageProductsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
