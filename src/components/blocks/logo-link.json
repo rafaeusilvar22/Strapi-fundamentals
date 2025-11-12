@@ -1,12 +1,12 @@
 {
   "collectionName": "components_blocks_logo_links",
   "info": {
-    "displayName": "Logo Link",
+    "displayName": "Image Link",
     "icon": "emotionHappy"
   },
   "options": {},
   "attributes": {
-    "label": {
+    "alt": {
       "type": "string"
     },
     "href": {

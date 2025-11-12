@@ -4,7 +4,7 @@
   "info": {
     "singularName": "products-page",
     "pluralName": "products-pages",
-    "displayName": "Products Page"
+    "displayName": "HomePage"
   },
   "options": {
     "draftAndPublish": true
@@ -31,17 +31,15 @@
         }
       }
     },
-    "image": {
-      "type": "media",
+    "sections": {
+      "type": "dynamiczone",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files"
+      "components": [
+        "blocks.logo-link"
       ]
     }
   }

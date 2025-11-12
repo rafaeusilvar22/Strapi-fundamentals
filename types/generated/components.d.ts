@@ -45,14 +45,14 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
 export interface BlocksLogoLink extends Struct.ComponentSchema {
   collectionName: 'components_blocks_logo_links';
   info: {
-    displayName: 'Logo Link';
+    displayName: 'Image Link';
     icon: 'emotionHappy';
   };
   attributes: {
+    alt: Schema.Attribute.String;
     href: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    label: Schema.Attribute.String;
   };
 }
 

@@ -551,7 +551,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
 export interface ApiProductsPageProductsPage extends Struct.SingleTypeSchema {
   collectionName: 'products_pages';
   info: {
-    displayName: 'Products Page';
+    displayName: 'HomePage';
     pluralName: 'products-pages';
     singularName: 'products-page';
   };
@@ -567,18 +567,18 @@ export interface ApiProductsPageProductsPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::products-page.products-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<['blocks.logo-link']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     subtitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
