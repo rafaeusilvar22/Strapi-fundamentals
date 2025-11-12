@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_blocks_hero_sections",
+  "info": {
+    "displayName": "LinkMenu",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "isOpenNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "isButtonLink": {
+      "type": "boolean",
+      "default": false
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ]
+    }
+  },
+  "config": {}
+}

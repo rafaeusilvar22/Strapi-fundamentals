@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_headers",
+  "info": {
+    "displayName": "Header",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "navigation_links": {
+      "type": "component",
+      "component": "blocks.hero-section",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

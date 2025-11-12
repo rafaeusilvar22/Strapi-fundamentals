@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_logo_links",
+  "info": {
+    "displayName": "Logo Link",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}
