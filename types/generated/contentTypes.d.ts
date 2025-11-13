@@ -489,6 +489,12 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    Cards: Schema.Attribute.Component<'blocks.card', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     carousel: Schema.Attribute.DynamicZone<['blocks.logo-link']> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

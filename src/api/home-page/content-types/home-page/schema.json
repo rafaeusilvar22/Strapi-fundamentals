@@ -41,6 +41,16 @@
       "components": [
         "blocks.logo-link"
       ]
+    },
+    "Cards": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "blocks.card",
+      "repeatable": true
     }
   }
 }

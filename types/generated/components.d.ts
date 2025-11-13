@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksCard extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_cards';
+  info: {
+    displayName: 'Card';
+    icon: 'apps';
+  };
+  attributes: {
+    highlight: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksFooter extends Struct.ComponentSchema {
   collectionName: 'components_blocks_footers';
   info: {
@@ -59,6 +72,7 @@ export interface BlocksLogoLink extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.card': BlocksCard;
       'blocks.footer': BlocksFooter;
       'blocks.header': BlocksHeader;
       'blocks.hero-section': BlocksHeroSection;
